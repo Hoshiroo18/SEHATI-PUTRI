@@ -5,7 +5,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
     const mapsLink = "https://maps.app.goo.gl/zTfn6BMfxY27MCpg9";
 
     return (
-        <footer className="bg-[#070709] border-t border-[#22222a] pt-8 sm:pt-16 pb-6 sm:pb-8 text-slate-400 text-xs sm:text-sm">
+        <footer className="bg-[#070709] border-t border-[#22222a] pt-8 sm:pt-16 pb-6 sm:pb-8 text-slate-400 text-sm sm:text-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 pb-8 sm:pb-12 border-b border-[#1f1f27]">
@@ -19,7 +19,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
                                 className="h-9 sm:h-12 w-auto object-contain brightness-0 invert drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"
                             />
                         </div>
-                        <p className="text-[11px] sm:text-xs text-slate-400 leading-relaxed max-w-sm">
+                        <p className="text-[13px] sm:text-xs text-slate-400 leading-relaxed max-w-sm">
                             Penyedia jasa persewaan peralatan event, tenda, panggung, rigging, genset, sound system, MUA & busana pengantin di Kota Serang, Banten.
                         </p>
                         
@@ -51,12 +51,12 @@ export default function Footer({ waLink, igLink, navigateTo }) {
                         </div>
                     </div>
 
-                    {/* Container Navigasi + Layanan (Dibuat 2 Kolom Sejajar di Mobile) */}
+                    {/* Container Navigasi + Layanan */}
                     <div className="grid grid-cols-2 gap-4 lg:col-span-5">
                         {/* Navigasi */}
                         <div className="space-y-2">
-                            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white">Navigasi</h4>
-                            <ul className="space-y-1.5 text-[11px] sm:text-xs">
+                            <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Navigasi</h4>
+                            <ul className="space-y-1.5 text-[13px] sm:text-xs">
                                 <li><button onClick={() => navigateTo('home')} className="hover:text-amber-400 transition-colors">Beranda</button></li>
                                 <li><button onClick={() => navigateTo('product')} className="hover:text-amber-400 transition-colors">Produk</button></li>
                                 <li><button onClick={() => navigateTo('gallery')} className="hover:text-amber-400 transition-colors">Galeri Kami</button></li>
@@ -67,8 +67,8 @@ export default function Footer({ waLink, igLink, navigateTo }) {
 
                         {/* Layanan */}
                         <div className="space-y-2">
-                            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white">Layanan</h4>
-                            <ul className="space-y-1.5 text-[11px] sm:text-xs text-slate-400">
+                            <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Layanan</h4>
+                            <ul className="space-y-1.5 text-[13px] sm:text-xs text-slate-400">
                                 <li>• Rias MUA & Busana</li>
                                 <li>• Tenda VIP & Sarnafil</li>
                                 <li>• Panggung & Rigging</li>
@@ -80,15 +80,15 @@ export default function Footer({ waLink, igLink, navigateTo }) {
 
                     {/* Alamat Kantor */}
                     <div className="lg:col-span-3 space-y-2">
-                        <h4 className="text-[11px] font-bold uppercase tracking-wider text-white">Alamat Kantor</h4>
-                        <p className="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+                        <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Alamat Kantor</h4>
+                        <p className="text-[13px] sm:text-xs text-slate-400 leading-relaxed">
                             Jl. K.H. Abdul Hadi, Kb. Jahe No.92, Cipare, Serang, Banten 42117
                         </p>
-                        <div className="pt-0.5 space-y-1 text-[11px] sm:text-xs">
+                        <div className="pt-0.5 space-y-1 text-[13px] sm:text-xs">
                             <p className="flex items-center text-amber-400 font-semibold">
                                 <span className="mr-1.5">📞</span> 0813-1933-891
                             </p>
-                            <a href={mapsLink} target="_blank" rel="noreferrer" className="inline-block text-slate-400 hover:text-amber-400 transition-colors text-[10px] sm:text-[11px] underline">
+                            <a href={mapsLink} target="_blank" rel="noreferrer" className="inline-block text-slate-400 hover:text-amber-400 transition-colors text-[12px] sm:text-[11px] underline">
                                 Petunjuk Arah (Google Maps) &rarr;
                             </a>
                         </div>
@@ -97,7 +97,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-xs text-slate-500 gap-2 text-center sm:text-left">
+                <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-[12px] sm:text-xs text-slate-500 gap-2 text-center sm:text-left">
                     <p>© {new Date().getFullYear()} Sehati Putri Jasa Pesta.</p>
                     <p className="text-slate-600">Peralatan Pesta & MUA Specialist Serang</p>
                 </div>

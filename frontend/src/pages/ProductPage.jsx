@@ -44,79 +44,76 @@ export default function ProductPage({ navigateTo }) {
     return (
         <div className="pt-28 pb-24 max-w-7xl mx-auto px-4 sm:px-6">
             
-{/* --- SEKSI 1: PERLENGKAPAN SEWA --- */}
-<section id="perlengkapan-sewa" className="scroll-mt-28 mb-16 sm:mb-24">
-    <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Katalog Lengkap</span>
-        <h1 className="font-serif text-2xl sm:text-5xl font-bold mt-1 sm:mt-2 mb-2 sm:mb-4 text-white">Perlengkapan Sewa & MUA</h1>
-        <p className="text-slate-400 text-xs sm:text-base">
-            Jelajahi seluruh perlengkapan pesta dan layanan MUA terbaik dari Sehati Putri Jasa Pesta Serang.
-        </p>
-    </div>
-
-    {/* Filter Kategori (Tombol dibuat lebih padat di HP) */}
-    <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-4 mb-8 sm:mb-12">
-        {categories.map((cat, idx) => (
-            <button
-                key={idx}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all ${
-                    selectedCategory === cat 
-                        ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' 
-                        : 'bg-[#121216] border border-[#22222a] text-slate-300 hover:border-amber-500/50'
-                }`}
-            >
-                {cat}
-            </button>
-        ))}
-    </div>
-
-    {/* Grid Produk: Diubah ke grid-cols-2 khusus mobile */}
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
-        {filteredProducts.map((item) => (
-            <div 
-                key={item.id} 
-                className="group bg-[#121216] border border-[#22222a] rounded-2xl sm:rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between shadow-lg"
-            >
-                {/* Visual Gambar (Tinggi diperkecil ke h-32/h-36 di mobile) */}
-                <div className="relative h-32 sm:h-56 overflow-hidden">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-black/70 backdrop-blur-md text-amber-400 text-[8px] sm:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border border-amber-500/30">
-                        {item.category}
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121216] via-transparent to-transparent" />
+            {/* --- SEKSI 1: PERLENGKAPAN SEWA --- */}
+            <section id="perlengkapan-sewa" className="scroll-mt-28 mb-16 sm:mb-24">
+                <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                    <span className="text-[12px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Katalog Lengkap</span>
+                    <h1 className="font-serif text-2xl sm:text-5xl font-bold mt-1 sm:mt-2 mb-2 sm:mb-4 text-white">Perlengkapan Sewa & MUA</h1>
+                    <p className="text-slate-400 text-sm sm:text-base">
+                        Jelajahi seluruh perlengkapan pesta dan layanan MUA terbaik dari Sehati Putri Jasa Pesta Serang.
+                    </p>
                 </div>
 
-                {/* Konten & Informasi */}
-                <div className="p-3 sm:p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 className="font-serif text-xs sm:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:text-amber-400 transition-colors line-clamp-2 leading-snug">
-                            {item.title}
-                        </h3>
-                        <p className="text-slate-400 text-[10px] sm:text-sm leading-relaxed mb-3 sm:mb-6 line-clamp-2">
-                            {item.desc}
-                        </p>
-                    </div>
-                    
-                    {/* Tombol Booking yang pas untuk 2 kolom */}
-                    <button 
-                        onClick={() => navigateTo('contact')}
-                        className="w-full py-2 sm:py-3 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500 hover:text-black text-amber-400 font-semibold text-[10px] sm:text-xs uppercase tracking-wider transition-all"
-                    >
-                        Booking &rarr;
-                    </button>
+                {/* Filter Kategori */}
+                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-4 mb-8 sm:mb-12">
+                    {categories.map((cat, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setSelectedCategory(cat)}
+                            className={`px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[13px] sm:text-xs font-semibold transition-all ${
+                                selectedCategory === cat 
+                                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' 
+                                    : 'bg-[#121216] border border-[#22222a] text-slate-300 hover:border-amber-500/50'
+                            }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
                 </div>
-            </div>
-        ))}
-    </div>
-</section>
+
+                {/* Grid Produk */}
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
+                    {filteredProducts.map((item) => (
+                        <div 
+                            key={item.id} 
+                            className="group bg-[#121216] border border-[#22222a] rounded-2xl sm:rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between shadow-lg"
+                        >
+                            <div className="relative h-32 sm:h-56 overflow-hidden">
+                                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-black/70 backdrop-blur-md text-amber-400 text-[10px] sm:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border border-amber-500/30">
+                                    {item.category}
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#121216] via-transparent to-transparent" />
+                            </div>
+
+                            <div className="p-3 sm:p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 className="font-serif text-sm sm:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:text-amber-400 transition-colors line-clamp-2 leading-snug">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-400 text-[12px] sm:text-sm leading-relaxed mb-3 sm:mb-6 line-clamp-2">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                                
+                                <button 
+                                    onClick={() => navigateTo('contact')}
+                                    className="w-full py-2 sm:py-3 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500 hover:text-black text-amber-400 font-semibold text-[12px] sm:text-xs uppercase tracking-wider transition-all"
+                                >
+                                    Booking &rarr;
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             {/* --- SEKSI 2: PAKET RENTAL --- */}
             <section id="paket-rental" className="pt-16 border-t border-[#22222a] scroll-mt-28">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Pilihan Hemat</span>
+                    <span className="text-sm sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Pilihan Hemat</span>
                     <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-4 text-white">Paket Rental Pesta & Wedding</h2>
-                    <p className="text-slate-400 text-sm">Pilih kombinasi sewa peralatan pesta atau gabungkan dengan MUA & rias pengantin.</p>
+                    <p className="text-slate-400 text-base sm:text-sm">Pilih kombinasi sewa peralatan pesta atau gabungkan dengan MUA & rias pengantin.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -128,7 +125,7 @@ export default function ProductPage({ navigateTo }) {
                             }`}
                         >
                             {pkg.popular && (
-                                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-[10px] uppercase tracking-widest font-bold px-4 py-1 rounded-full">
+                                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-[12px] sm:text-[10px] uppercase tracking-widest font-bold px-4 py-1 rounded-full">
                                     Paling Populer
                                 </span>
                             )}
@@ -136,7 +133,7 @@ export default function ProductPage({ navigateTo }) {
                             <div className="my-6">
                                 <span className="text-2xl font-bold text-amber-400">{pkg.price}</span>
                             </div>
-                            <ul className="space-y-4 mb-8 text-sm text-slate-300">
+                            <ul className="space-y-4 mb-8 text-base sm:text-sm text-slate-300">
                                 {pkg.features.map((feat, fIdx) => (
                                     <li key={fIdx} className="flex items-center">
                                         <span className="text-amber-400 mr-3">✓</span> {feat}
@@ -145,7 +142,7 @@ export default function ProductPage({ navigateTo }) {
                             </ul>
                             <button 
                                 onClick={() => navigateTo('contact')} 
-                                className={`block text-center w-full py-3.5 rounded-full font-semibold text-sm transition-all ${
+                                className={`block text-center w-full py-3.5 rounded-full font-semibold text-base sm:text-sm transition-all ${
                                     pkg.popular 
                                         ? 'bg-amber-500 text-black hover:bg-amber-400' 
                                         : 'bg-slate-800 text-slate-200 hover:bg-slate-700'

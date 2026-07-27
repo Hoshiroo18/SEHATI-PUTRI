@@ -25,9 +25,9 @@ export default function GalleryPage({ navigateTo }) {
         <div className="pt-20 sm:pt-28 pb-16 sm:pb-24 max-w-7xl mx-auto px-3 sm:px-6">
             {/* Judul Halaman */}
             <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
-                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi Portofolio</span>
+                <span className="text-[12px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi Portofolio</span>
                 <h1 className="font-serif text-2xl sm:text-5xl font-bold mt-1 sm:mt-2 mb-2 sm:mb-4 text-white">Galeri Hasil Karya & Event</h1>
-                <p className="text-slate-400 text-xs sm:text-base">
+                <p className="text-slate-400 text-sm sm:text-base">
                     Dokumentasi rias pengantin MUA, dekorasi tenda, pemasangan panggung, serta perlengkapan pesta Sehati Putri.
                 </p>
             </div>
@@ -38,7 +38,7 @@ export default function GalleryPage({ navigateTo }) {
                     <button
                         key={idx}
                         onClick={() => setSelectedCategory(cat)}
-                        className={`px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all ${
+                        className={`px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[13px] sm:text-xs font-semibold transition-all ${
                             selectedCategory === cat 
                                 ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' 
                                 : 'bg-[#121216] border border-[#22222a] text-slate-300 hover:border-amber-500/50'
@@ -49,7 +49,7 @@ export default function GalleryPage({ navigateTo }) {
                 ))}
             </div>
 
-            {/* Grid Galeri: Dibuat 2 kolom di mobile (grid-cols-2) */}
+            {/* Grid Galeri */}
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-16">
                 {filteredItems.map((item) => (
                     <div 
@@ -57,7 +57,6 @@ export default function GalleryPage({ navigateTo }) {
                         onClick={() => setActiveModalImage(item)}
                         className="group relative overflow-hidden rounded-xl sm:rounded-3xl bg-[#121216] border border-[#22222a] hover:border-amber-500/50 transition-all duration-300 cursor-pointer shadow-lg"
                     >
-                        {/* Gambar diperkecil tingginya jadi h-40/h-44 di mobile */}
                         <div className="relative h-40 sm:h-72 w-full overflow-hidden">
                             <img 
                                 src={item.img} 
@@ -65,13 +64,12 @@ export default function GalleryPage({ navigateTo }) {
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-3 sm:p-6 flex flex-col justify-end">
-                                <span className="text-[9px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider mb-0.5">
+                                <span className="text-[11px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider mb-0.5">
                                     {item.category}
                                 </span>
-                                <h3 className="text-xs sm:text-base font-serif font-bold text-white group-hover:text-amber-300 transition-colors line-clamp-2 leading-snug">
+                                <h3 className="text-sm sm:text-base font-serif font-bold text-white group-hover:text-amber-300 transition-colors line-clamp-2 leading-snug">
                                     {item.title}
                                 </h3>
-                                {/* Deskripsi tersembunyi di mobile agar kartu tidak kepanjangan, tetapi muncul di tablet/desktop */}
                                 <p className="hidden sm:block text-slate-400 text-xs mt-1 line-clamp-2">
                                     {item.desc}
                                 </p>
@@ -84,18 +82,18 @@ export default function GalleryPage({ navigateTo }) {
             {/* Call to Action Booking */}
             <div className="text-center bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-12">
                 <h3 className="font-serif text-xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Tertarik dengan Konsep?</h3>
-                <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-6">
+                <p className="text-slate-400 text-sm sm:text-sm max-w-xl mx-auto mb-6">
                     Wujudkan konsep pernikahan atau event impian Anda bersama perlengkapan terbaik dari Sehati Putri Jasa Pesta.
                 </p>
                 <button 
                     onClick={() => navigateTo('contact')}
-                    className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-amber-500 text-black font-semibold text-xs uppercase tracking-wider hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
+                    className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-amber-500 text-black font-semibold text-sm sm:text-xs uppercase tracking-wider hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
                 >
                     Konsultasikan Jadwal Acara Anda
                 </button>
             </div>
 
-            {/* Modal Lightbox Gambar (Pop-up saat foto diklik) */}
+            {/* Modal Lightbox Gambar */}
             {activeModalImage && (
                 <div 
                     className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in"
@@ -107,7 +105,7 @@ export default function GalleryPage({ navigateTo }) {
                     >
                         <button 
                             onClick={() => setActiveModalImage(null)}
-                            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-amber-500 hover:text-black transition-all text-xs sm:text-sm"
+                            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-amber-500 hover:text-black transition-all text-sm sm:text-sm"
                         >
                             ✕
                         </button>
@@ -115,12 +113,12 @@ export default function GalleryPage({ navigateTo }) {
                             <img src={activeModalImage.img} alt={activeModalImage.title} className="w-full h-full object-cover" />
                         </div>
                         <div className="p-4 sm:p-8">
-                            <span className="text-[10px] sm:text-xs font-semibold text-amber-400 uppercase tracking-widest">{activeModalImage.category}</span>
+                            <span className="text-[12px] sm:text-xs font-semibold text-amber-400 uppercase tracking-widest">{activeModalImage.category}</span>
                             <h3 className="font-serif text-lg sm:text-2xl font-bold text-white mt-0.5 mb-2">{activeModalImage.title}</h3>
-                            <p className="text-slate-400 text-xs sm:text-sm mb-4 sm:mb-6">{activeModalImage.desc}</p>
+                            <p className="text-slate-400 text-sm sm:text-sm mb-4 sm:mb-6">{activeModalImage.desc}</p>
                             <button 
                                 onClick={() => { setActiveModalImage(null); navigateTo('contact'); }}
-                                className="w-full py-3 sm:py-3.5 rounded-full bg-amber-500 text-black font-semibold text-xs uppercase tracking-wider hover:bg-amber-400 transition-all"
+                                className="w-full py-3 sm:py-3.5 rounded-full bg-amber-500 text-black font-semibold text-sm sm:text-xs uppercase tracking-wider hover:bg-amber-400 transition-all"
                             >
                                 Tanya Tanggal / Booking Konsep Ini
                             </button>

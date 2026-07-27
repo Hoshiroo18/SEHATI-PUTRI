@@ -75,9 +75,9 @@ export default function DashboardPage({ navigateTo }) {
                     ))}
                 </div>
 
-                {/* Content Hero (pt-32 sm:pt-20 agar teks & tombol di mobile lebih turun) */}
+                {/* Content Hero */}
                 <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-32 sm:pt-20">
-                    <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold tracking-widest text-amber-400 bg-amber-500/20 border border-amber-500/30 mb-4 uppercase backdrop-blur-md">
+                    <span className="inline-block px-3 py-1 rounded-full text-[12px] sm:text-xs font-semibold tracking-widest text-amber-400 bg-amber-500/20 border border-amber-500/30 mb-4 uppercase backdrop-blur-md">
                         MUA, Peralatan Pesta & Event
                     </span>
                     <h1 className="font-serif text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white">
@@ -86,19 +86,19 @@ export default function DashboardPage({ navigateTo }) {
                             {heroSlides[currentSlide].title}
                         </span>
                     </h1>
-                    <p className="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
+                    <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
                         {heroSlides[currentSlide].desc}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto px-4 sm:px-0">
                         <button 
                             onClick={() => navigateTo('contact')}
-                            className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold text-xs sm:text-sm hover:opacity-90 transition-all shadow-lg shadow-amber-500/20"
+                            className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold text-sm hover:opacity-90 transition-all shadow-lg shadow-amber-500/20"
                         >
                             Pesan via Form WA
                         </button>
                         <button 
                             onClick={() => navigateTo('product')}
-                            className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-slate-100 font-semibold text-xs sm:text-sm hover:bg-black/70 transition-all"
+                            className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-slate-100 font-semibold text-sm hover:bg-black/70 transition-all"
                         >
                             Lihat Produk & Paket
                         </button>
@@ -129,37 +129,37 @@ export default function DashboardPage({ navigateTo }) {
                             </div>
                             <div className="absolute -bottom-4 right-2 sm:bottom-6 sm:right-6 bg-[#121216] border border-amber-500/40 rounded-2xl p-4 sm:p-6 shadow-xl backdrop-blur-md">
                                 <span className="text-2xl sm:text-3xl font-bold text-amber-400 block font-serif">10+ Tahun</span>
-                                <span className="text-[10px] sm:text-xs text-slate-400 font-medium">Pengalaman Jasa Pesta</span>
+                                <span className="text-xs sm:text-xs text-slate-400 font-medium">Pengalaman Jasa Pesta</span>
                             </div>
                         </div>
 
                         <div className="lg:col-span-6 space-y-4 sm:space-y-6 pt-4 lg:pt-0">
-                            <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Tentang Kami</span>
+                            <span className="text-sm sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Tentang Kami</span>
                             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
                                 Solusi Perlengkapan Pesta & Rias Pengantin Terbaik di Serang
                             </h2>
-                            <p className="text-slate-300 text-xs sm:text-base leading-relaxed font-light">
+                            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                                 <strong className="text-amber-400 font-semibold">Sehati Putri Jasa Pesta</strong> adalah penyedia jasa persewaan peralatan event, panggung, tenda, sound system, genset, serta layanan MUA terpercaya di Kota Serang, Banten.
                             </p>
-                            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            <p className="text-slate-400 text-sm sm:text-sm leading-relaxed">
                                 Kami berkomitmen memberikan kualitas peralatan terbaik, bersih, kokoh, serta didukung oleh tim profesional yang siap memastikan acara Anda berjalan sempurna.
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
                                 <div className="bg-[#121216] border border-[#22222a] p-4 rounded-2xl">
                                     <h4 className="text-amber-400 font-bold text-base mb-1">Peralatan Lengkap</h4>
-                                    <p className="text-slate-400 text-xs">Mulai dari Tenda, Rigging, Genset hingga Alat Prasmanan.</p>
+                                    <p className="text-slate-400 text-sm sm:text-xs">Mulai dari Tenda, Rigging, Genset hingga Alat Prasmanan.</p>
                                 </div>
                                 <div className="bg-[#121216] border border-[#22222a] p-4 rounded-2xl">
                                     <h4 className="text-amber-400 font-bold text-base mb-1">MUA Flawless</h4>
-                                    <p className="text-slate-400 text-xs">Riasan pengantin elegan dan anggun untuk momen berharga Anda.</p>
+                                    <p className="text-slate-400 text-sm sm:text-xs">Riasan pengantin elegan dan anggun untuk momen berharga Anda.</p>
                                 </div>
                             </div>
 
                             <div className="pt-2">
                                 <button 
                                     onClick={() => navigateTo('contact')}
-                                    className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-amber-500 text-black font-semibold text-xs uppercase tracking-wider hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
+                                    className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-amber-500 text-black font-semibold text-sm sm:text-xs uppercase tracking-wider hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
                                 >
                                     Konsultasi Acara Anda
                                 </button>
@@ -172,9 +172,9 @@ export default function DashboardPage({ navigateTo }) {
             {/* JASA LAYANAN */}
             <section id="services" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Pilihan Layanan</span>
+                    <span className="text-sm sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Pilihan Layanan</span>
                     <h2 className="font-serif text-2xl sm:text-4xl font-bold mt-2 mb-3 text-white">Layanan Utama Kami</h2>
-                    <p className="text-slate-400 text-xs sm:text-sm">Temukan layanan yang sesuai dengan kebutuhan acara dan pesta Anda.</p>
+                    <p className="text-slate-400 text-sm sm:text-sm">Temukan layanan yang sesuai dengan kebutuhan acara dan pesta Anda.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -196,13 +196,13 @@ export default function DashboardPage({ navigateTo }) {
                                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
                                         {item.title}
                                     </h3>
-                                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                    <p className="text-slate-400 text-sm sm:text-sm leading-relaxed mb-6">
                                         {item.desc}
                                     </p>
                                 </div>
                                 <button 
                                     onClick={() => navigateTo('product')} 
-                                    className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors text-left"
+                                    className="inline-flex items-center text-sm sm:text-xs font-semibold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors text-left"
                                 >
                                     Lihat Detail di Page Produk &rarr;
                                 </button>
@@ -216,7 +216,7 @@ export default function DashboardPage({ navigateTo }) {
             <section id="gallery" className="py-12 sm:py-24 bg-[#0d0d11] border-t border-[#22222a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
-                        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi</span>
+                        <span className="text-[12px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi</span>
                         <h2 className="font-serif text-xl sm:text-4xl font-bold mt-1 sm:mt-2 text-white">Galeri Event, MUA & Peralatan</h2>
                     </div>
 
@@ -229,10 +229,10 @@ export default function DashboardPage({ navigateTo }) {
                                     className="h-40 sm:h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110" 
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-3 sm:p-6 flex flex-col justify-end">
-                                    <span className="text-[9px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider">
+                                    <span className="text-[11px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider">
                                         {item.category}
                                     </span>
-                                    <h4 className="text-xs sm:text-lg font-serif font-bold text-white mt-0.5 line-clamp-2 leading-snug">
+                                    <h4 className="text-sm sm:text-lg font-serif font-bold text-white mt-0.5 line-clamp-2 leading-snug">
                                         {item.title}
                                     </h4>
                                 </div>

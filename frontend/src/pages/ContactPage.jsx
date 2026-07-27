@@ -26,9 +26,9 @@ export default function ContactPage({ waLink, igLink }) {
     return (
         <div className="pt-28 pb-24 max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Hubungi Kami</span>
+                <span className="text-sm font-semibold uppercase tracking-widest text-amber-400">Hubungi Kami</span>
                 <h1 className="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4 text-white">Formulir Konsultasi & Pemesanan</h1>
-                <p className="text-slate-400 text-sm">Silakan isi formulir di bawah ini untuk konsultasi cepat. Pesan akan terformat otomatis di WhatsApp kami.</p>
+                <p className="text-slate-400 text-base sm:text-sm">Silakan isi formulir di bawah ini untuk konsultasi cepat. Pesan akan terformat otomatis di WhatsApp kami.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
@@ -45,18 +45,18 @@ export default function ContactPage({ waLink, igLink }) {
                                 </svg>
                             </div>
                             <div>
-                                <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Telepon / WhatsApp</p>
+                                <p className="text-sm text-slate-400 uppercase tracking-wider font-semibold">Telepon / WhatsApp</p>
                                 <h3 className="text-xl font-bold text-white mt-0.5">0813-1933-891</h3>
                             </div>
                         </div>
-                        <p className="text-slate-400 text-xs leading-relaxed mb-6">
+                        <p className="text-slate-400 text-sm sm:text-xs leading-relaxed mb-6">
                             Respon cepat untuk konsultasi MUA, persewaan alat pesta, ketersediaan tanggal acara, dan estimasi biaya.
                         </p>
                         <a 
                             href={waLink} 
                             target="_blank" 
                             rel="noreferrer"
-                            className="block text-center w-full py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold text-sm hover:opacity-90 transition-all shadow-lg shadow-amber-500/20"
+                            className="block text-center w-full py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold text-base sm:text-sm hover:opacity-90 transition-all shadow-lg shadow-amber-500/20"
                         >
                             Chat WA Langsung Tanpa Form
                         </a>
@@ -71,21 +71,21 @@ export default function ContactPage({ waLink, igLink }) {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
-                            <h4 className="font-bold text-white text-sm mb-1">Alamat Galeri & Kantor</h4>
-                            <p className="text-slate-400 text-xs leading-relaxed mb-3">
+                            <h4 className="font-bold text-white text-base sm:text-sm mb-1">Alamat Galeri & Kantor</h4>
+                            <p className="text-slate-400 text-sm sm:text-xs leading-relaxed mb-3">
                                 Jl. K.H. Abdul Hadi Jl. Kb. Jahe No.92, Cipare, Kec. Serang, Kota Serang, Banten 42117
                             </p>
                             <a 
                                 href={mapsLink} 
                                 target="_blank" 
                                 rel="noreferrer"
-                                className="inline-flex items-center text-xs font-semibold text-amber-400 hover:underline"
+                                className="inline-flex items-center text-sm sm:text-xs font-semibold text-amber-400 hover:underline"
                             >
                                 Buka di Google Maps &rarr;
                             </a>
                         </div>
 
-                        {/* Instagram & Jam Operasional (Dibuat grid-cols-2 khusus mobile) */}
+                        {/* Instagram & Jam Operasional */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             {/* Instagram */}
                             <a 
@@ -100,10 +100,10 @@ export default function ContactPage({ waLink, igLink }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <h4 className="font-bold text-white text-xs sm:text-sm mb-0.5 group-hover:text-amber-400 transition-colors line-clamp-1">
+                                <h4 className="font-bold text-white text-sm sm:text-sm mb-0.5 group-hover:text-amber-400 transition-colors line-clamp-1">
                                     Instagram Resmi
                                 </h4>
-                                <p className="text-amber-400 text-[10px] sm:text-xs font-medium truncate">
+                                <p className="text-amber-400 text-[12px] sm:text-xs font-medium truncate">
                                     @sehati_putri
                                 </p>
                             </a>
@@ -115,10 +115,10 @@ export default function ContactPage({ waLink, igLink }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h4 className="font-bold text-white text-xs sm:text-sm mb-0.5 line-clamp-1">
+                                <h4 className="font-bold text-white text-sm sm:text-sm mb-0.5 line-clamp-1">
                                     Jam Operasional
                                 </h4>
-                                <p className="text-slate-400 text-[10px] sm:text-xs leading-tight">
+                                <p className="text-slate-400 text-[12px] sm:text-xs leading-tight">
                                     Setiap Hari (24 Jam)
                                 </p>
                             </div>
@@ -129,59 +129,59 @@ export default function ContactPage({ waLink, igLink }) {
                 {/* Formulir WA */}
                 <div className="lg:col-span-7 bg-[#121216] border border-[#22222a] rounded-3xl p-8 sm:p-10 shadow-lg">
                     <h3 className="font-serif text-2xl font-bold text-white mb-2">Formulir Pemesanan / Konsultasi</h3>
-                    <p className="text-slate-400 text-xs mb-8">Isi data di bawah ini, lalu klik tombol untuk mengirim pesan terformat otomatis via WhatsApp.</p>
+                    <p className="text-slate-400 text-sm sm:text-xs mb-8">Isi data di bawah ini, lalu klik tombol untuk mengirim pesan terformat otomatis via WhatsApp.</p>
 
                     <form onSubmit={handleFormSubmit} className="space-y-6">
                         <div>
-                            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                            <label className="block text-sm sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nama Lengkap</label>
                             <input 
                                 type="text" 
                                 required
                                 placeholder="Masukkan nama Anda"
                                 value={formData.nama}
                                 onChange={(e) => setFormData({...formData, nama: e.target.value})}
-                                className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
+                                className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-base sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
                             />
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Jenis Acara</label>
+                                <label className="block text-sm sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Jenis Acara</label>
                                 <input 
                                     type="text" 
                                     required
                                     placeholder="Contoh: Pernikahan, Konser, Syukuran"
                                     value={formData.acara}
                                     onChange={(e) => setFormData({...formData, acara: e.target.value})}
-                                    className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
+                                    className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-base sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Rencana Tanggal Acara</label>
+                                <label className="block text-sm sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Rencana Tanggal Acara</label>
                                 <input 
                                     type="date" 
                                     value={formData.tanggal}
                                     onChange={(e) => setFormData({...formData, tanggal: e.target.value})}
-                                    className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
+                                    className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-base sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors"
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Peralatan / Layanan MUA yang Dibutuhkan</label>
+                            <label className="block text-sm sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Peralatan / Layanan MUA yang Dibutuhkan</label>
                             <textarea 
                                 rows="4"
                                 required
                                 placeholder="Contoh: Rias Pengantin (MUA), tenda sarnafil 2 unit, panggung 6x4m, sound system, AC standing 2 unit"
                                 value={formData.kebutuhan}
                                 onChange={(e) => setFormData({...formData, kebutuhan: e.target.value})}
-                                className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                                className="w-full bg-[#0a0a0c] border border-[#22222a] rounded-xl px-4 py-3.5 text-base sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-amber-500 transition-colors resize-none"
                             ></textarea>
                         </div>
 
                         <button 
                             type="submit"
-                            className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center space-x-2"
+                            className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-base sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center space-x-2"
                         >
                             <span>Kirim Pesan via WhatsApp</span>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -196,14 +196,14 @@ export default function ContactPage({ waLink, igLink }) {
             <div className="bg-[#121216] border border-[#22222a] rounded-3xl p-6 sm:p-8 shadow-lg">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                     <div>
-                        <span className="text-xs font-semibold text-amber-400 uppercase tracking-widest">Peta Lokasi</span>
+                        <span className="text-sm font-semibold text-amber-400 uppercase tracking-widest">Peta Lokasi</span>
                         <h3 className="font-serif text-2xl font-bold text-white mt-1">Lokasi Sehati Putri Jasa Pesta</h3>
                     </div>
                     <a 
                         href={mapsLink} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-black font-semibold text-xs uppercase tracking-wider transition-all"
+                        className="px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-black font-semibold text-sm sm:text-xs uppercase tracking-wider transition-all"
                     >
                         Buka di Aplikasi Maps
                     </a>

@@ -28,7 +28,7 @@ export default function Header({ activePage, navigateTo }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 sm:h-20">
                     
-                    {/* Logo Aplikasi - Dibuat presisi tanpa padding liar */}
+                    {/* Logo Aplikasi */}
                     <div 
                         className="flex items-center cursor-pointer group" 
                         onClick={() => { navigateTo('home'); setIsMenuOpen(false); }}
@@ -136,7 +136,7 @@ export default function Header({ activePage, navigateTo }) {
                 <div className="md:hidden bg-[#121216] border-b border-[#22222a] px-4 pt-3 pb-6 space-y-2 animate-fade-in">
                     <button 
                         onClick={() => { navigateTo('home'); setIsMenuOpen(false); }} 
-                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-sm font-medium ${activePage === 'home' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
+                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-base font-medium ${activePage === 'home' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
                     >
                         Beranda
                     </button>
@@ -144,19 +144,19 @@ export default function Header({ activePage, navigateTo }) {
                     <div className="space-y-1 bg-[#0a0a0c]/50 p-2 rounded-xl border border-[#22222a]">
                         <button 
                             onClick={() => { navigateTo('product'); setIsMenuOpen(false); }} 
-                            className="block w-full text-left text-sm font-semibold text-amber-400 py-1 px-2"
+                            className="block w-full text-left text-base font-semibold text-amber-400 py-1 px-2"
                         >
                             Produk (Katalog Utama)
                         </button>
                         <button 
                             onClick={() => handleNavClick('product', 'perlengkapan-sewa')} 
-                            className="block w-full text-left text-xs text-slate-300 hover:text-amber-400 py-1.5 px-4"
+                            className="block w-full text-left text-sm text-slate-300 hover:text-amber-400 py-1.5 px-4"
                         >
                             ├ Perlengkapan Sewa
                         </button>
                         <button 
                             onClick={() => handleNavClick('product', 'paket-rental')} 
-                            className="block w-full text-left text-xs text-slate-300 hover:text-amber-400 py-1.5 px-4"
+                            className="block w-full text-left text-sm text-slate-300 hover:text-amber-400 py-1.5 px-4"
                         >
                             └ Paket Rental
                         </button>
@@ -164,26 +164,26 @@ export default function Header({ activePage, navigateTo }) {
 
                     <button 
                         onClick={() => { navigateTo('gallery'); setIsMenuOpen(false); }} 
-                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-sm font-medium ${activePage === 'gallery' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
+                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-base font-medium ${activePage === 'gallery' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
                     >
                         Galeri Kami
                     </button>
                     <button 
                         onClick={() => { navigateTo('about'); setIsMenuOpen(false); }} 
-                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-sm font-medium ${activePage === 'about' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
+                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-base font-medium ${activePage === 'about' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
                     >
                         Tentang Kami
                     </button>
                     <button 
                         onClick={() => { navigateTo('contact'); setIsMenuOpen(false); }} 
-                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-sm font-medium ${activePage === 'contact' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
+                        className={`block w-full text-left py-2.5 px-3 rounded-lg text-base font-medium ${activePage === 'contact' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-300'}`}
                     >
                         Kontak
                     </button>
                     
                     <button 
                         onClick={() => { navigateTo('contact'); setIsMenuOpen(false); }}
-                        className="block w-full text-center py-3 rounded-xl bg-amber-500 text-black font-semibold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 mt-4"
+                        className="block w-full text-center py-3 rounded-xl bg-amber-500 text-black font-semibold text-sm uppercase tracking-wider shadow-lg shadow-amber-500/20 mt-4"
                     >
                         Hubungi Kami
                     </button>
