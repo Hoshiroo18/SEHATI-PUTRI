@@ -20,7 +20,8 @@ export default function ContactPage({ waLink, igLink }) {
             `📅 *Rencana Tanggal*: ${encodeURIComponent(formData.tanggal || '-')}%0A` +
             `📋 *Kebutuhan Detail*: %0A${encodeURIComponent(formData.kebutuhan)}`;
 
-        window.open(`https://wa.me/628131933891?text=${formatWA}`, '_blank');
+        // Nomor WhatsApp otomatis diarahkan ke 081932565288
+        window.open(`https://wa.me/6281932565288?text=${formatWA}`, '_blank');
     };
 
     return (
@@ -46,7 +47,7 @@ export default function ContactPage({ waLink, igLink }) {
                             </div>
                             <div>
                                 <p className="text-sm text-slate-400 uppercase tracking-wider font-semibold">Telepon / WhatsApp</p>
-                                <h3 className="text-xl font-bold text-white mt-0.5">0813-1933-891</h3>
+                                <h3 className="text-xl font-bold text-white mt-0.5">0819-3256-5288</h3>
                             </div>
                         </div>
                         <p className="text-slate-400 text-sm sm:text-xs leading-relaxed mb-6">

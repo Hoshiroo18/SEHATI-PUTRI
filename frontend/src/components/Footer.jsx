@@ -86,7 +86,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
                         </p>
                         <div className="pt-0.5 space-y-1 text-[13px] sm:text-xs">
                             <p className="flex items-center text-amber-400 font-semibold">
-                                <span className="mr-1.5">📞</span> 0813-1933-891
+                                <span className="mr-1.5">📞</span> 0819-3256-5288
                             </p>
                             <a href={mapsLink} target="_blank" rel="noreferrer" className="inline-block text-slate-400 hover:text-amber-400 transition-colors text-[12px] sm:text-[11px] underline">
                                 Petunjuk Arah (Google Maps) &rarr;
@@ -98,7 +98,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
 
                 {/* Bottom Bar */}
                 <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-[12px] sm:text-xs text-slate-500 gap-2 text-center sm:text-left">
-                    <p>© {new Date().getFullYear()} Hoshiroo Project.</p>
+                    <p>© {new Date().getFullYear()} Sehati Putri Jasa Pesta.</p>
                     <p className="text-slate-600">Peralatan Pesta & MUA Specialist Serang</p>
                 </div>
 

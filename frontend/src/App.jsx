@@ -8,10 +8,10 @@ import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 
 export default function App() {
-    // Active Pages: 'home', 'about', 'product', 'gallery', 'contact'
     const [activePage, setActivePage] = useState('home');
 
-    const waLink = "https://wa.me/628131933891?text=Halo%20Sehati%20Putri,%20saya%20mau%20tanya%20info%20price%20dan%20booking%20sewa%20peralatan%20pesta%20/%20MUA";
+    // Link WhatsApp diperbarui menggunakan nomor 6281932565288
+    const waLink = "https://wa.me/6281932565288?text=Halo%20Sehati%20Putri,%20saya%20mau%20tanya%20info%20price%20dan%20booking%20sewa%20peralatan%20pesta%20/%20MUA";
     const igLink = "https://instagram.com/sehati_putri";
 
     const navigateTo = (page) => {
@@ -31,7 +31,7 @@ export default function App() {
                 {activePage === 'contact' && <ContactPage waLink={waLink} igLink={igLink} />}
             </main>
 
-            <Footer waLink={waLink} igLink={igLink} />
+            <Footer waLink={waLink} igLink={igLink} navigateTo={navigateTo} />
         </div>
     );
 }
