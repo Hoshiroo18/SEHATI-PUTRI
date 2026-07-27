@@ -98,7 +98,7 @@ export default function Footer({ waLink, igLink, navigateTo }) {
 
                 {/* Bottom Bar */}
                 <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-[12px] sm:text-xs text-slate-500 gap-2 text-center sm:text-left">
-                    <p>© {new Date().getFullYear()} Sehati Putri Jasa Pesta.</p>
+                    <p>© {new Date().getFullYear()} Hoshiroo Project.</p>
                     <p className="text-slate-600">Peralatan Pesta & MUA Specialist Serang</p>
                 </div>
 
