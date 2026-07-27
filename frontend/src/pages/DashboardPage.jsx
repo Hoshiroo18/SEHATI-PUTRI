@@ -65,7 +65,7 @@ export default function DashboardPage({ navigateTo }) {
     return (
         <div className="overflow-x-hidden">
             {/* HERO CAROUSEL */}
-            <section id="top" className="relative h-[85vh] min-h-[550px] max-h-[800px] flex items-center justify-center overflow-hidden">
+            <section id="top" className="relative h-[85vh] min-h-[600px] max-h-[850px] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     {heroSlides.map((slide, index) => (
                         <div key={slide.id} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
@@ -75,7 +75,8 @@ export default function DashboardPage({ navigateTo }) {
                     ))}
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-16 sm:pt-20">
+                {/* Content Hero (pt-32 sm:pt-20 agar teks & tombol di mobile lebih turun) */}
+                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-32 sm:pt-20">
                     <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold tracking-widest text-amber-400 bg-amber-500/20 border border-amber-500/30 mb-4 uppercase backdrop-blur-md">
                         MUA, Peralatan Pesta & Event
                     </span>
@@ -104,7 +105,7 @@ export default function DashboardPage({ navigateTo }) {
                     </div>
                 </div>
 
-                {/* Arrow Controls (Diubah ukurannya agar tidak terlalu menutupi di layar HP) */}
+                {/* Arrow Controls */}
                 <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-black/40 text-white border border-white/20 hover:bg-amber-500 hover:text-black transition-all backdrop-blur-sm text-sm">
                     ‹
                 </button>
@@ -211,39 +212,35 @@ export default function DashboardPage({ navigateTo }) {
                 </div>
             </section>
 
-{/* GALLERY */}
-<section id="gallery" className="py-12 sm:py-24 bg-[#0d0d11] border-t border-[#22222a]">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
-            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi</span>
-            <h2 className="font-serif text-xl sm:text-4xl font-bold mt-1 sm:mt-2 text-white">Galeri Event, MUA & Peralatan</h2>
-        </div>
+            {/* GALLERY (Format 2-2 di Mobile) */}
+            <section id="gallery" className="py-12 sm:py-24 bg-[#0d0d11] border-t border-[#22222a]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
+                        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-amber-400">Dokumentasi</span>
+                        <h2 className="font-serif text-xl sm:text-4xl font-bold mt-1 sm:mt-2 text-white">Galeri Event, MUA & Peralatan</h2>
+                    </div>
 
-        {/* Diubah dari grid-cols-1 jadi grid-cols-2 khusus mobile (2 kolom) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-            {galleryItems.map((item) => (
-                <div key={item.id} className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#121216] border border-[#22222a]">
-                    {/* Tinggi gambar diperkecil jadi h-40/h-44 agar pas di mobile */}
-                    <img 
-                        src={item.img} 
-                        alt={item.title} 
-                        className="h-40 sm:h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                    />
-                    
-                    {/* Padding & Text disesuaikan untuk tampilan 2 kolom mobile */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-3 sm:p-6 flex flex-col justify-end">
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider">
-                            {item.category}
-                        </span>
-                        <h4 className="text-xs sm:text-lg font-serif font-bold text-white mt-0.5 line-clamp-2 leading-snug">
-                            {item.title}
-                        </h4>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                        {galleryItems.map((item) => (
+                            <div key={item.id} className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#121216] border border-[#22222a]">
+                                <img 
+                                    src={item.img} 
+                                    alt={item.title} 
+                                    className="h-40 sm:h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-3 sm:p-6 flex flex-col justify-end">
+                                    <span className="text-[9px] sm:text-[10px] uppercase font-bold text-amber-400 tracking-wider">
+                                        {item.category}
+                                    </span>
+                                    <h4 className="text-xs sm:text-lg font-serif font-bold text-white mt-0.5 line-clamp-2 leading-snug">
+                                        {item.title}
+                                    </h4>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
-            ))}
-        </div>
-    </div>
-</section>
+            </section>
         </div>
     );
 }
