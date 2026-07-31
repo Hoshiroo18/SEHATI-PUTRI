@@ -127,9 +127,11 @@ export default function DashboardPage({ navigateTo }) {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                             </div>
-                            <div className="absolute -bottom-4 right-2 sm:bottom-6 sm:right-6 bg-[#121216] border border-amber-500/40 rounded-2xl p-4 sm:p-6 shadow-xl backdrop-blur-md">
-                                <span className="text-2xl sm:text-3xl font-bold text-amber-400 block font-serif">10+ Tahun</span>
-                                <span className="text-xs sm:text-xs text-slate-400 font-medium">Pengalaman Jasa Pesta</span>
+                            
+                            {/* BADGE 10+ TAHUN (Posisi dinaikkan khusus layar mobile) */}
+                            <div className="absolute right-3 bottom-5 sm:right-6 sm:bottom-6 bg-[#121216]/95 border border-amber-500/40 rounded-2xl p-3.5 sm:p-6 shadow-2xl backdrop-blur-md z-10 max-w-[160px] sm:max-w-none">
+                                <span className="text-xl sm:text-3xl font-bold text-amber-400 block font-serif">10+ Tahun</span>
+                                <span className="text-[10px] sm:text-xs text-slate-300 font-medium leading-tight block">Pengalaman Jasa Pesta</span>
                             </div>
                         </div>
 
@@ -212,7 +214,7 @@ export default function DashboardPage({ navigateTo }) {
                 </div>
             </section>
 
-            {/* GALLERY (Format 2-2 di Mobile) */}
+            {/* GALLERY */}
             <section id="gallery" className="py-12 sm:py-24 bg-[#0d0d11] border-t border-[#22222a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-16">

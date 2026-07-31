@@ -64,29 +64,7 @@ export default function ContactPage({ waLink, igLink }) {
                     </div>
 
                     <div className="space-y-4">
-                        {/* Alamat Galeri & Kantor */}
-                        <div className="bg-[#121216] border border-[#22222a] rounded-2xl p-6">
-                            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <h4 className="font-bold text-white text-base sm:text-sm mb-1">Alamat Galeri & Kantor</h4>
-                            <p className="text-slate-400 text-sm sm:text-xs leading-relaxed mb-3">
-                                Jl. K.H. Abdul Hadi Jl. Kb. Jahe No.92, Cipare, Kec. Serang, Kota Serang, Banten 42117
-                            </p>
-                            <a 
-                                href={mapsLink} 
-                                target="_blank" 
-                                rel="noreferrer"
-                                className="inline-flex items-center text-sm sm:text-xs font-semibold text-amber-400 hover:underline"
-                            >
-                                Buka di Google Maps &rarr;
-                            </a>
-                        </div>
-
-                        {/* Instagram & Jam Operasional */}
+{/* Instagram & Jam Operasional */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             {/* Instagram */}
                             <a 
@@ -120,9 +98,30 @@ export default function ContactPage({ waLink, igLink }) {
                                     Jam Operasional
                                 </h4>
                                 <p className="text-slate-400 text-[12px] sm:text-xs leading-tight">
-                                    Setiap Hari (24 Jam)
+                                    Setiap Hari
                                 </p>
                             </div>
+                        </div>
+                        {/* Alamat Galeri & Kantor */}
+                        <div className="bg-[#121216] border border-[#22222a] rounded-2xl p-6">
+                            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h4 className="font-bold text-white text-base sm:text-sm mb-1">Alamat Galeri & Kantor</h4>
+                            <p className="text-slate-400 text-sm sm:text-xs leading-relaxed mb-3">
+                                Jl. K.H. Abdul Hadi Jl. Kb. Jahe No.92, Cipare, Kec. Serang, Kota Serang, Banten 42117
+                            </p>
+                            <a 
+                                href={mapsLink} 
+                                target="_blank" 
+                                rel="noreferrer"
+                                className="inline-flex items-center text-sm sm:text-xs font-semibold text-amber-400 hover:underline"
+                            >
+                                Buka di Google Maps &rarr;
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -64,9 +64,10 @@ export default function AboutPage({ navigateTo }) {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent" />
                     </div>
 
-                    <div className="absolute -bottom-6 -right-2 sm:bottom-6 sm:right-6 bg-[#121216]/95 border border-amber-500/40 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
-                        <span className="text-3xl font-bold text-amber-400 block font-serif">10+ Tahun</span>
-                        <span className="text-sm text-slate-400 font-medium">Pengalaman di Bidang Event</span>
+                    {/* BADGE 10+ TAHUN (Disamakan posisinya dengan DashboardPage) */}
+                    <div className="absolute right-3 bottom-8 sm:right-6 sm:bottom-6 bg-[#121216]/95 border border-amber-500/40 rounded-2xl p-3.5 sm:p-6 shadow-2xl backdrop-blur-md z-10 max-w-[160px] sm:max-w-none">
+                        <span className="text-xl sm:text-3xl font-bold text-amber-400 block font-serif">10+ Tahun</span>
+                        <span className="text-[10px] sm:text-xs text-slate-300 font-medium leading-tight block">Pengalaman di Bidang Event</span>
                     </div>
                 </div>
 
