@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-// --- IMPORT GAMBAR LOKAL ---
-// Sesuaikan nama file .jpg/.png dengan file yang kamu simpan di src/assets/products/
 import imgTendaPlafon from '../assets/products/tenda-plafon.jpg';
 import imgTendaSerut from '../assets/products/tenda-serut.jpg';
 import imgSarnafil3x3 from '../assets/products/sarnafil-3x3.jpg';
@@ -29,6 +27,76 @@ import imgAC from '../assets/products/ac.jpg';
 import imgSound from '../assets/products/sound.jpg';
 import imgGenset from '../assets/products/genset.jpg';
 import imgVideotron from '../assets/products/videotron.jpg';
+
+// --- SVGs Vektor profesional untuk Section Header & Tab ---
+const HomeIcon = () => (
+    <svg className="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>
+);
+
+const BuildingIcon = () => (
+    <svg className="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0H9m4 0V7m0 0h4m-4 0H9" />
+    </svg>
+);
+
+const MapPinIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+);
+
+// Icon Fasilitas
+const TentIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+    </svg>
+);
+
+const SparklesIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>
+);
+
+const UserIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>
+);
+
+const CameraIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+);
+
+const MusicIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 .895-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 .895-2 3-2 3 .895 3 2zM9 10l12-3" />
+    </svg>
+);
+
+const MicIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+    </svg>
+);
+
+const UsersIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+);
+
+const UtensilsIcon = () => (
+    <svg className="w-3.5 h-3.5 inline-block mr-1.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+);
 
 export default function ProductPage({ navigateTo }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -699,28 +767,28 @@ export default function ProductPage({ navigateTo }) {
                     </p>
                 </div>
 
-                {/* Tab Switcher: Rumah vs Gedung */}
+                {/* Tab Switcher: Rumah vs Gedung (Icon Vektor) */}
                 <div className="flex justify-center mb-10">
                     <div className="bg-[#121216] border border-[#22222a] p-1.5 rounded-full inline-flex space-x-2">
                         <button
                             onClick={() => setSelectedPackageTab('Rumah/Outdoor')}
-                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center ${
                                 selectedPackageTab === 'Rumah/Outdoor'
                                     ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
                                     : 'text-slate-400 hover:text-white'
                             }`}
                         >
-                            🏡 Paket Rumah & Outdoor
+                            <HomeIcon /> Paket Rumah & Outdoor
                         </button>
                         <button
                             onClick={() => setSelectedPackageTab('Gedung')}
-                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center ${
                                 selectedPackageTab === 'Gedung'
                                     ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
                                     : 'text-slate-400 hover:text-white'
                             }`}
                         >
-                            🏛️ Paket Gedung & Resto
+                            <BuildingIcon /> Paket Gedung & Resto
                         </button>
                     </div>
                 </div>
@@ -742,8 +810,8 @@ export default function ProductPage({ navigateTo }) {
                                 )}
 
                                 <div>
-                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1">
-                                        📍 {pkg.locationTag}
+                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1 flex items-center">
+                                        <MapPinIcon /> {pkg.locationTag}
                                     </span>
                                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">{pkg.name}</h3>
                                     <div className="my-4 pb-4 border-b border-[#22222a]">
@@ -752,7 +820,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.equipment && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">🎪 Fasilitas tenda dan perlengkapan nya :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <TentIcon /> Fasilitas Tenda & Perlengkapan:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.equipment.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -766,7 +836,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.decor && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">💐 Fasilitas Dekorasi :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <SparklesIcon /> Fasilitas Dekorasi:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.decor.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -780,7 +852,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.makeup && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">💄 Fasilitas Make up dan busana :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <UserIcon /> Fasilitas Make up & Busana:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.makeup.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -794,7 +868,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.documentation && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">📷 Fasilitas Dokumentasi :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <CameraIcon /> Fasilitas Dokumentasi:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.documentation.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -808,7 +884,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.entertainment && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">🎵 Fasilitas Hiburan :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <MusicIcon /> Fasilitas Hiburan:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.entertainment.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -822,7 +900,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.mc && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">🎤 Fasilitas MC :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <MicIcon /> Fasilitas MC:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.mc.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -836,7 +916,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.mapag && (
                                         <div className="mb-6">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">💃 Fasilitas Mapag / Lengser :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <UsersIcon /> Fasilitas Mapag / Lengser:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.mapag.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -891,8 +973,8 @@ export default function ProductPage({ navigateTo }) {
                                 )}
 
                                 <div>
-                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1">
-                                        🏛️ {pkg.locationTag}
+                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1 flex items-center">
+                                        <BuildingIcon /> {pkg.locationTag}
                                     </span>
                                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">{pkg.name}</h3>
                                     <div className="my-4 pb-4 border-b border-[#22222a]">
@@ -901,7 +983,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.equipment && (
                                         <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">🍽️ Fasilitas perlengkapan nya :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <UtensilsIcon /> Fasilitas Perlengkapan:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.equipment.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">
@@ -915,7 +999,9 @@ export default function ProductPage({ navigateTo }) {
 
                                     {pkg.decor && (
                                         <div className="mb-6">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">💐 Fasilitas Dekorasi :</h4>
+                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                                <SparklesIcon /> Fasilitas Dekorasi:
+                                            </h4>
                                             <ul className="space-y-1.5 text-xs text-slate-300">
                                                 {pkg.decor.map((item, idx) => (
                                                     <li key={idx} className="flex items-start">

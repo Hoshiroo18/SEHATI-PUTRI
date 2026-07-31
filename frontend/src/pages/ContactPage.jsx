@@ -64,7 +64,8 @@ export default function ContactPage({ waLink, igLink }) {
                     </div>
 
                     <div className="space-y-4">
-{/* Instagram & Jam Operasional */}
+
+                    {/* Instagram & Jam Operasional */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             {/* Instagram */}
                             <a 
@@ -102,6 +103,7 @@ export default function ContactPage({ waLink, igLink }) {
                                 </p>
                             </div>
                         </div>
+                        
                         {/* Alamat Galeri & Kantor */}
                         <div className="bg-[#121216] border border-[#22222a] rounded-2xl p-6">
                             <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3">
