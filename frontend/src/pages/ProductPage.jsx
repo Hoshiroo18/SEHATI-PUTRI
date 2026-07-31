@@ -30,13 +30,13 @@ import imgVideotron from '../assets/products/videotron.jpg';
 
 // --- SVGs Vektor profesional untuk Section Header & Tab ---
 const HomeIcon = () => (
-    <svg className="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-4 h-4 shrink-0 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
     </svg>
 );
 
 const BuildingIcon = () => (
-    <svg className="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-4 h-4 shrink-0 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0H9m4 0V7m0 0h4m-4 0H9" />
     </svg>
 );
@@ -100,7 +100,7 @@ const UtensilsIcon = () => (
 
 export default function ProductPage({ navigateTo }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
-    const [selectedPackageTab, setSelectedPackageTab] = useState('Rumah/Outdoor');
+    const [selectedPackageTab, setSelectedPackageTab] = useState('All');
 
     const categories = [
         'All', 
@@ -313,14 +313,16 @@ export default function ProductPage({ navigateTo }) {
         },
     ];
 
-    // Daftar Paket Rental Lengkap
-    const packagesRumah = [
+    // SEMUA 11 PAKET LENGKAP - URUT DARI TERMURAH (Rp 2 JT) SAMPAI TERMAHAL (Rp 35 JT)
+    const allPackages = [
+        // Paket 11 dari list lu (Rp 2.000.000)
         {
-            id: 'p1',
-            name: 'Paket Engagement / Lamaran Decor Only',
-            price: 'Rp 2.000.000',
+            id: 'p11',
+            type: 'Rumah/Outdoor',
+            name: 'Paket Engagement / lamaran Decor Only',
+            price: 'Rp. 2.000.000',
             locationTag: 'Acara di dalam rumah / di teras / di garasi',
-            popular: false,
+            badgeText: null,
             decor: [
                 'Sketsel pelaminan max 4m + artificial flowers ( bunga plastik ) + kursi tiffany 2 pcs / sofa kecil + kotak uang 2',
                 'Kain background belakang backdrop max 6m',
@@ -331,16 +333,17 @@ export default function ProductPage({ navigateTo }) {
                 'Standing welcome mirror selfie + cutting sticker nama pengantin'
             ],
             notes: [
-                'Decor Artificial flowers apabila mau di ganti dengan fresh flowers ada penambahan biaya 500.000/m',
-                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan, Kragilan, Cikande dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Decor Artificial flowers apabila mau di ganti dengan fresh flowers ada penambahan biaya 500.000/m'
             ]
         },
+        // Paket 1 dari list lu (Rp 5.000.000)
         {
-            id: 'p2',
+            id: 'p1',
+            type: 'Rumah/Outdoor',
             name: 'Paket Decor Only, pelaminan outdoor',
-            price: 'Rp 5.000.000',
+            price: 'Rp. 5.000.000',
             locationTag: 'Acara di bawah tenda / halaman rumah',
-            popular: false,
+            badgeText: null,
             decor: [
                 'Sketsel pelaminan max 5m + artificial flowers ( bunga plastik ) + kursi pengantin 1 set + kotak uang',
                 '2 Standing artificial flowers jalan',
@@ -355,16 +358,17 @@ export default function ProductPage({ navigateTo }) {
             ],
             notes: [
                 'Decor Artificial flowers apabila mau di ganti dengan fresh flowers ada penambahan biaya 500.000 / m',
-                'Sketsel pelaminan di atas 5m ada penambahan biaya Rp. 1.000.000 / m sdh include penambahan biaya fresh flowers',
-                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan, Kragilan, Cikande dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Sketsel pelaminan di atas 5m ada penambahan biaya Rp. 1.000.000 / m sdh include penambahan biaya fresh flowers'
             ]
         },
+        // Paket 2 dari list lu (Rp 8,5 jt)
         {
-            id: 'p3',
+            id: 'p2',
+            type: 'Rumah/Outdoor',
             name: 'Paket Decor pelaminan + Tenda + Perlengkapan',
-            price: 'Rp 8.500.000',
+            price: 'Rp. 8.500.000 jt',
             locationTag: 'Acara di jalan komplek / halaman rumah',
-            popular: true,
+            badgeText: null,
             equipment: [
                 'Tenda dekor secukup nya / max s/d 60m ( 5x12 ) plafon serut + full kain background',
                 'Meja prasmanan',
@@ -392,16 +396,46 @@ export default function ProductPage({ navigateTo }) {
             notes: [
                 'Ukuran tenda apabila melebihi jatah paket 60m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
                 'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 1.500.000',
-                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan, Kragilan, Cikande dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 1.500.000'
             ]
         },
+        // Paket 7 dari list lu (Rp 8,5 juta)
         {
-            id: 'p4',
+            id: 'p7',
+            type: 'Gedung',
+            name: 'Package Decor Only, acara di Gedung / Resto / Cafe',
+            price: 'Rp. 8.500.000',
+            locationTag: 'Acara di Gedung / Resto / Cafe',
+            badgeText: null,
+            decor: [
+                'Sketsel pelaminan gedung max 8m + decor fresh flowers',
+                'Kain background dinding belakang pelaminan',
+                'Kursi akad nikah tiffany 6 pcs + meja akad',
+                'Standing fresh flower pelaminan',
+                'Standing fresh flower jalan 6',
+                'Gazebo dekor + bunga lantai',
+                'Karpet jalan permadani tebal',
+                'Mini garden depan panggung pelaminan',
+                'Decor photobooth',
+                'Janur',
+                'Papan acrylic ucapan selamat dtg',
+                'Welcome gate / Gapura bunga artificial',
+                'Standing welcome mirror selfie + sticker nama pengantin'
+            ],
+            notes: [
+                'Apabila sketsel pelaminan diatas 8m ada penambahan biaya Rp. 1.500.000 / m sdh include penambahan biaya fresh flowers',
+                'Apabila dinding gedung mau di pasang full kain background di kenakan tambahan biaya Rp. 25.000 / m',
+                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah di luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) akan dikenakan tambahan biaya transportasi sesuai lokasi / jarak tempuh.'
+            ]
+        },
+        // Paket 3 dari list lu (Rp 12 jt)
+        {
+            id: 'p3',
+            type: 'Rumah/Outdoor',
             name: 'Paket Dekorasi pelaminan + Tenda + Perlengkapan',
-            price: 'Rp 12.000.000',
+            price: 'Rp. 12.000.000',
             locationTag: 'Acara di halaman rumah',
-            popular: false,
+            badgeText: null,
             equipment: [
                 'Tenda dekor secukup nya / max s/d 108m ( 9x12 ) plafon serut + full kain background',
                 'Meja prasmanan',
@@ -429,16 +463,17 @@ export default function ProductPage({ navigateTo }) {
             notes: [
                 'Ukuran tenda apabila melebihi jatah paket 108m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
                 'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 3.000.000',
-                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan, Kragilan, Cikande dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 3.000.000'
             ]
         },
+        // Paket 4 dari list lu (Rp 15 jt)
         {
-            id: 'p5',
+            id: 'p4',
+            type: 'Rumah/Outdoor',
             name: 'Paket Dekorasi pelaminan + Tenda + Perlengkapan',
-            price: 'Rp 15.000.000',
+            price: 'Rp. 15.000.000',
             locationTag: 'Acara di lapangan',
-            popular: false,
+            badgeText: null,
             equipment: [
                 'Tenda dekor secukup nya / max s/d 162m ( 9x18 ) plafon serut + full kain background',
                 'Meja prasmanan',
@@ -466,16 +501,56 @@ export default function ProductPage({ navigateTo }) {
             notes: [
                 'Ukuran tenda apabila melebihi jatah paket 162m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
                 'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 3.000.000',
-                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan, Kragilan, Cikande dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Jatah decor artificial flowers ( bunga plastik ) apabila mau di ganti dgn fresh flowers ( bunga hidup asli ) akan di kenakan penambahan biaya Rp. 3.000.000'
             ]
         },
+        // Paket 8 dari list lu (Rp 15.000.000) - BEST SELLER 2
         {
-            id: 'p6',
+            id: 'p8',
+            type: 'Gedung',
+            name: 'Paket Dekorasi pelaminan + Perlengkapan ( acara di Gedung )',
+            price: 'Rp. 15.000.000',
+            locationTag: 'Acara di Gedung',
+            badgeText: 'BEST SELLER 2',
+            equipment: [
+                'Meja prasmanan',
+                'Pemanas besar biasa 6 set + sangku nasi',
+                'Piring, sendok, garpu 200 set',
+                'Kursi plastik + cover 100 pcs',
+                'Saungkap pondokan 4 pcs',
+                'Panggung puade ( bila di butuhkan )',
+                'meja tamu 2 pcs',
+                'Kipas blower 4 pcs',
+                '2 Meja bulat VIP'
+            ],
+            decor: [
+                'Sketsel pelaminan gedung max 8m + full fresh flowers + kursi pengantin 1 set + kotak uang 2',
+                'Standing fresh flower pelaminan',
+                'Standing fresh flower jalan 6',
+                '4 Standing lampu gantung kristal + dekor bunga lantai',
+                'Karpet permadani pelaminan',
+                'Gazebo dekor + dekor bunga lantai',
+                'karpet jalan',
+                'Mini garden depan panggung pelaminan',
+                'Papan acrylic ucapan selamat dtg + cutting sticker nama pengantin',
+                'Welcome gate / gapura bunga artificial',
+                'Standing welcome mirror selfie + cutting sticker nama pengantin'
+            ],
+            notes: [
+                'Apabila sketsel pelaminan diatas 8m ada penambahan biaya Rp. 1.500.000 /m sdh include penambahan biaya fresh flowers',
+                'Apabila dinding gedung mau di pasang full kain background di kenakan tambahan biaya Rp. 25.000 /m',
+                'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
+                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah di luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) akan dikenakan tambahan biaya transportasi sesuai lokasi / jarak tempuh.'
+            ]
+        },
+        // Paket 5 dari list lu (Rp 25.000.000) - BEST SELLER 1
+        {
+            id: 'p5',
+            type: 'Rumah/Outdoor',
             name: 'Paket Komplit All in include Rias + Dekorasi pelaminan + Tenda + Perlengkapan + FG + MC + Mapag + Hiburan',
-            price: 'Rp 25.000.000',
+            price: 'Rp. 25.000.000',
             locationTag: 'Acara di jalan komplek/ halaman rumah',
-            popular: true,
+            badgeText: 'BEST SELLER 1',
             equipment: [
                 'Tenda dekor secukup nya / max s/d 60 m ( 5x12 ) plafon serut + full kain background',
                 'Meja prasmanan',
@@ -539,12 +614,14 @@ export default function ProductPage({ navigateTo }) {
                 'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
             ]
         },
+        // Paket 6 dari list lu (Rp 30 jt) - REKOMENDASI 1 (Paket 30jt Rumah/Outdoor)
         {
-            id: 'p7',
+            id: 'p6',
+            type: 'Rumah/Outdoor',
             name: 'Paket All in include Rias + Dekorasi pelaminan + Tenda + Perlengkapan + FG + MC + Mapag + Hiburan',
-            price: 'Rp 30.000.000',
+            price: 'Rp. 30.000.000',
             locationTag: 'Acara di halaman rumah',
-            popular: false,
+            badgeText: 'REKOMENDASI 1',
             equipment: [
                 'Tenda dekor secukup nya / max s/d 108m ( 9x12 ) plafon serut + full kain background',
                 'Meja prasmanan',
@@ -605,118 +682,17 @@ export default function ProductPage({ navigateTo }) {
             notes: [
                 'Ukuran tenda apabila melebihi jatah paket 108 m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
                 'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah di luar Kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
             ]
         },
+        // Paket 9 dari list lu (Rp 30.000.000) - REKOMENDASI 2 (Paket 30jt Gedung)
         {
-            id: 'p8',
-            name: 'Paket Lengkap All in include Rias + Dekorasi pelaminan + Tenda + Perlengkapan  + FG MC + Mapag + Hiburan',
-            price: 'Rp 35.000.000',
-            locationTag: 'Acara di lapangan',
-            popular: false,
-            equipment: [
-                'Tenda dekor secukup nya / max s/d 162m ( 9x18 ) plafon serut + full kain background',
-                'Meja prasmanan',
-                'Pemanas besar biasa 6 set + sangku nasi',
-                'Piring, sendok, garpu 100 set',
-                'Kursi plastik + cover 100 pcs',
-                'Saungkap pondokan 2 pcs',
-                'Panggung puade',
-                'Tenda penerima tamu + meja tamu 2 pcs',
-                'Kipas blower 4 pcs',
-                'Lampu penerangan tenda'
-            ],
-            decor: [
-                'Sketsel pelaminan + Fresh flowers ( bunga hidup asli ) + kursi pengantin 1 set + kotak uang 2',
-                '4 Standing artificial flowers jalan',
-                '4 Standing tiang lampu kristal + dekor bunga lantai',
-                'Karpet permadani pelaminan',
-                'Gazebo dekor + dekor bunga lantai',
-                'Full karpet + karpet jalan',
-                'Mini garden depan panggung pelaminan',
-                'Papan acrylic ucapan selamat dtg + cutting sticker nama pengantin',
-                'Welcome gate / gapura bunga artificial',
-                'Standing welcome mirror selfie + cutting sticker nama pengantin'
-            ],
-            notes: [
-                'Ukuran tenda apabila melebihi jatah paket 162m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
-                'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
-            ]
-        }
-    ];
-
-    const packagesGedung = [
-        {
-            id: 'pg1',
-            name: 'Package Decor Only, acara di Gedung / Resto / Cafe',
-            price: 'Rp 8.500.000',
-            locationTag: 'Acara di Gedung / Resto / Cafe',
-            popular: false,
-            decor: [
-                'Sketsel pelaminan gedung max 8m + decor fresh flowers',
-                'Kain background dinding belakang pelaminan',
-                'Kursi akad nikah tiffany 6 pcs + meja akad',
-                'Standing fresh flower pelaminan',
-                'Standing fresh flower jalan 6',
-                'Gazebo dekor + bunga lantai',
-                'Karpet jalan permadani tebal',
-                'Mini garden depan panggung pelaminan',
-                'Decor photobooth',
-                'Janur',
-                'Papan acrylic ucapan selamat dtg',
-                'Welcome gate / Gapura bunga artificial',
-                'Standing welcome mirror selfie + sticker nama pengantin'
-            ],
-            notes: [
-                'Apabila sketsel pelaminan diatas 8m ada penambahan biaya Rp. 1.500.000 / m sdh include penambahan biaya fresh flowers',
-                'Apabila dinding gedung mau di pasang full kain background di kenakan tambahan biaya Rp. 25.000 / m',
-                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
-            ]
-        },
-        {
-            id: 'pg2',
-            name: 'Paket Dekorasi pelaminan + Perlengkapan ( acara di Gedung )',
-            price: 'Rp 15.000.000',
-            locationTag: 'Acara di Gedung',
-            popular: true,
-            equipment: [
-                'Meja prasmanan',
-                'Pemanas besar biasa 6 set + sangku nasi',
-                'Piring, sendok, garpu 200 set',
-                'Kursi plastik + cover 100 pcs',
-                'Saungkap pondokan 4 pcs',
-                'Panggung puade ( bila di butuhkan )',
-                'meja tamu 2 pcs',
-                'Kipas blower 4 pcs',
-                '2 Meja bulat VIP'
-            ],
-            decor: [
-                'Sketsel pelaminan gedung max 8m + full fresh flowers + kursi pengantin 1 set + kotak uang 2',
-                'Standing fresh flower pelaminan',
-                'Standing fresh flower jalan 6',
-                '4 Standing lampu gantung kristal + dekor bunga lantai',
-                'Karpet permadani pelaminan',
-                'Gazebo dekor + dekor bunga lantai',
-                'karpet jalan',
-                'Mini garden depan panggung pelaminan',
-                'Papan acrylic ucapan selamat dtg + cutting sticker nama pengantin',
-                'Welcome gate / gapura bunga artificial',
-                'Standing welcome mirror selfie + cutting sticker nama pengantin'
-            ],
-            notes: [
-                'Apabila sketsel pelaminan diatas 8m ada penambahan biaya Rp. 1.500.000 /m sdh include penambahan biaya fresh flowers',
-                'Apabila dinding gedung mau di pasang full kain background di kenakan tambahan biaya Rp. 25.000 /m',
-                'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
-            ]
-        },
-        {
-            id: 'pg3',
+            id: 'p9',
+            type: 'Gedung',
             name: 'Paket Komplit All in include Rias + Dekorasi pelaminan + Perlengkapan + FG + MC + Mapag + Hiburan ( acara di Gedung )',
-            price: 'Rp 30.000.000',
+            price: 'Rp. 30.000.000',
             locationTag: 'Acara di Gedung',
-            popular: true,
+            badgeText: 'REKOMENDASI 2',
             equipment: [
                 'Meja prasmanan',
                 'Pemanas besar biasa 6 set + sangku nasi',
@@ -745,10 +721,85 @@ export default function ProductPage({ navigateTo }) {
                 'Apabila sketsel pelaminan diatas 10m ada penambahan biaya Rp. 1.500.000 / m sdh include penambahan biaya fresh flowers',
                 'Apabila dinding gedung mau di pasang full kain background di kenakan tambahan biaya Rp. 25.000 /m',
                 'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
-                'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah luar Serang ( Cilegon, Pandeglang, Lebak, Labuan ) dikenakan penambahan biaya transportasi sesuai lokasi / jarak tempuh'
+                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah di luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) akan dikenakan tambahan biaya transportasi sesuai lokasi / jarak tempuh.'
+            ]
+        },
+        // Paket 10 dari list lu (Rp 35.000.000)
+        {
+            id: 'p10',
+            type: 'Rumah/Outdoor',
+            name: 'Paket Lengkap All in include Rias + Dekorasi pelaminan + Tenda + Perlengkapan  + FG MC + Mapag + Hiburan',
+            price: 'Rp. 35.000.000',
+            locationTag: 'Acara di lapangan',
+            badgeText: null,
+            equipment: [
+                'Tenda dekor secukup nya / max s/d 162m ( 9x18 ) plafon serut + full kain background',
+                'Meja prasmanan',
+                'Pemanas besar biasa 6 set + sangku nasi',
+                'Piring, sendok, garpu 100 set',
+                'Kursi plastik + cover 100 pcs',
+                'Saungkap pondokan 2 pcs',
+                'Panggung puade',
+                'Tenda penerima tamu + meja tamu 2 pcs',
+                'Kipas blower 4 pcs',
+                'Lampu penerangan tenda'
+            ],
+            decor: [
+                'Sketsel pelaminan + Fresh flowers ( bunga hidup asli ) + kursi pengantin 1 set + kotak uang 2',
+                '4 Standing artificial flowers jalan',
+                '4 Standing tiang lampu kristal + dekor bunga lantai',
+                'Karpet permadani pelaminan',
+                'Gazebo dekor + dekor bunga lantai',
+                'Full karpet + karpet jalan',
+                'Mini garden depan panggung pelaminan',
+                'Papan acrylic ucapan selamat dtg + cutting sticker nama pengantin',
+                'Welcome gate / gapura bunga artificial',
+                'Standing welcome mirror selfie + cutting sticker nama pengantin'
+            ],
+            makeup: [
+                'Make up pengantin',
+                'Pakaian pengantin max 3x ganti',
+                'Fresh melati pengantin',
+                'Softlens',
+                'Make up orang tua + besan + pakaian 1x ganti',
+                'Make up keluarga/pagar ayu 4 + baju'
+            ],
+            documentation: [
+                'Foto 1 album',
+                'Videoshoot',
+                'Master foto + video dlm bentuk FD'
+            ],
+            entertainment: [
+                'Organ tunggal + pemain + singer 1 + soundsystem',
+                'Panggung hiburan 3x3 / 3x4'
+            ],
+            mc: [
+                'MC akad + upacara adat + resepsi',
+                'Free : party popper, kendi, telor'
+            ],
+            mapag: [
+                'Penari 3 orang',
+                'Pemayung 1 orang',
+                'Lengser dan ambu',
+                'Upacara penyambutan',
+                'Iring pengantin wanita',
+                'Tari persembahan',
+                'Kirab',
+                'Tiktok/flashmob',
+                'Wedding kiss',
+                'Lempar bunga'
+            ],
+            notes: [
+                'Ukuran tenda apabila melebihi jatah paket 162m akan di kenakan penambahan biaya Rp. 50.000/m ( sudah include kain background, karpet full, karpet jalan dan tenda plafon serut )',
+                'Penambahan peralatan di luar jatah paket akan di kenakan penambahan biaya sesuai kuantitas dan kebutuhan nya',
+                'Harga paket ini hanya utk wilayah kota Serang dan sekitarnya. Utk wilayah di luar kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) akan dikenakan tambahan biaya transportasi sesuai lokasi / jarak tempuh.'
             ]
         }
     ];
+
+    const filteredPackages = selectedPackageTab === 'All'
+        ? allPackages
+        : allPackages.filter(p => p.type === selectedPackageTab);
 
     const filteredProducts = selectedCategory === 'All' 
         ? products 
@@ -767,273 +818,202 @@ export default function ProductPage({ navigateTo }) {
                     </p>
                 </div>
 
-                {/* Tab Switcher: Rumah vs Gedung (Icon Vektor) */}
-                <div className="flex justify-center mb-10">
-                    <div className="bg-[#121216] border border-[#22222a] p-1.5 rounded-full inline-flex space-x-2">
+                {/* Tab Switcher: Filter Jenis Paket (Diperbaiki agar rapi & tidak patah di mobile) */}
+                <div className="flex justify-center mb-10 overflow-x-auto py-2 px-1">
+                    <div className="bg-[#121216] border border-[#22222a] p-1.5 rounded-full inline-flex flex-nowrap space-x-1 sm:space-x-2 shrink-0">
+                        <button
+                            onClick={() => setSelectedPackageTab('All')}
+                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
+                                selectedPackageTab === 'All'
+                                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
+                                    : 'text-slate-400 hover:text-white'
+                            }`}
+                        >
+                            Semua 11 Paket
+                        </button>
                         <button
                             onClick={() => setSelectedPackageTab('Rumah/Outdoor')}
-                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center ${
+                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
                                 selectedPackageTab === 'Rumah/Outdoor'
                                     ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
                                     : 'text-slate-400 hover:text-white'
                             }`}
                         >
-                            <HomeIcon /> Paket Rumah & Outdoor
+                            <HomeIcon /> Rumah & Outdoor
                         </button>
                         <button
                             onClick={() => setSelectedPackageTab('Gedung')}
-                            className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center ${
+                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
                                 selectedPackageTab === 'Gedung'
                                     ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
                                     : 'text-slate-400 hover:text-white'
                             }`}
                         >
-                            <BuildingIcon /> Paket Gedung & Resto
+                            <BuildingIcon /> Gedung & Resto
                         </button>
                     </div>
                 </div>
 
-                {/* Grid Paket Rumah / Outdoor */}
-                {selectedPackageTab === 'Rumah/Outdoor' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {packagesRumah.map((pkg) => (
-                            <div 
-                                key={pkg.id} 
-                                className={`relative bg-[#121216] border rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
-                                    pkg.popular ? 'border-amber-500/80 shadow-xl shadow-amber-500/10' : 'border-[#22222a]'
-                                }`}
-                            >
-                                {pkg.popular && (
-                                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-[10px] uppercase tracking-widest font-bold px-4 py-1 rounded-full shadow-md">
-                                        Paling Rekomendasi
-                                    </span>
-                                )}
+                {/* Grid Paket Rental */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredPackages.map((pkg) => (
+                        <div 
+                            key={pkg.id} 
+                            className={`relative bg-[#121216] border rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
+                                pkg.badgeText ? 'border-amber-500/80 shadow-xl shadow-amber-500/10' : 'border-[#22222a]'
+                            }`}
+                        >
+                            {pkg.badgeText && (
+                                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-[10px] uppercase tracking-widest font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap">
+                                    {pkg.badgeText}
+                                </span>
+                            )}
 
-                                <div>
-                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1 flex items-center">
-                                        <MapPinIcon /> {pkg.locationTag}
-                                    </span>
-                                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">{pkg.name}</h3>
-                                    <div className="my-4 pb-4 border-b border-[#22222a]">
-                                        <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-serif">{pkg.price}</span>
-                                    </div>
-
-                                    {pkg.equipment && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <TentIcon /> Fasilitas Tenda & Perlengkapan:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.equipment.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.decor && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <SparklesIcon /> Fasilitas Dekorasi:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.decor.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.makeup && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <UserIcon /> Fasilitas Make up & Busana:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.makeup.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.documentation && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <CameraIcon /> Fasilitas Dokumentasi:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.documentation.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.entertainment && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <MusicIcon /> Fasilitas Hiburan:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.entertainment.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.mc && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <MicIcon /> Fasilitas MC:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.mc.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.mapag && (
-                                        <div className="mb-6">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <UsersIcon /> Fasilitas Mapag / Lengser:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.mapag.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.notes && (
-                                        <div className="bg-[#0a0a0c] p-3.5 rounded-2xl border border-[#22222a] mb-6 space-y-2">
-                                            {pkg.notes.map((note, idx) => (
-                                                <p key={idx} className="text-[11px] text-slate-400 leading-relaxed">
-                                                    <strong className="text-amber-400">Note :</strong> {note}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    )}
+                            <div>
+                                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-1 flex items-center">
+                                    {pkg.type === 'Gedung' ? <BuildingIcon /> : <MapPinIcon />} {pkg.locationTag}
+                                </span>
+                                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">{pkg.name}</h3>
+                                <div className="my-4 pb-4 border-b border-[#22222a]">
+                                    <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-serif">{pkg.price}</span>
                                 </div>
 
-                                <button 
-                                    onClick={() => navigateTo('contact')} 
-                                    className={`w-full py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all ${
-                                        pkg.popular 
-                                            ? 'bg-amber-500 text-black hover:bg-amber-400 shadow-lg shadow-amber-500/20' 
-                                            : 'bg-[#1a1a22] border border-[#333340] text-slate-200 hover:bg-amber-500 hover:text-black'
-                                    }`}
-                                >
-                                    Pesan Paket Ini via WA
-                                </button>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {/* Grid Paket Gedung */}
-                {selectedPackageTab === 'Gedung' && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {packagesGedung.map((pkg) => (
-                            <div 
-                                key={pkg.id} 
-                                className={`relative bg-[#121216] border rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
-                                    pkg.popular ? 'border-amber-500/80 shadow-xl shadow-amber-500/10' : 'border-[#22222a]'
-                                }`}
-                            >
-                                {pkg.popular && (
-                                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-[10px] uppercase tracking-widest font-bold px-4 py-1 rounded-full shadow-md">
-                                        Paling Favorit
-                                    </span>
+                                {pkg.equipment && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <TentIcon /> Fasilitas tenda dan perlengkapan nya :
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.equipment.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 )}
 
-                                <div>
-                                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1 flex items-center">
-                                        <BuildingIcon /> {pkg.locationTag}
-                                    </span>
-                                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">{pkg.name}</h3>
-                                    <div className="my-4 pb-4 border-b border-[#22222a]">
-                                        <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-serif">{pkg.price}</span>
-                                    </div>
-
-                                    {pkg.equipment && (
-                                        <div className="mb-4">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <UtensilsIcon /> Fasilitas Perlengkapan:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.equipment.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.decor && (
-                                        <div className="mb-6">
-                                            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
-                                                <SparklesIcon /> Fasilitas Dekorasi:
-                                            </h4>
-                                            <ul className="space-y-1.5 text-xs text-slate-300">
-                                                {pkg.decor.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-400/80 mr-2 shrink-0">•</span>
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {pkg.notes && (
-                                        <div className="bg-[#0a0a0c] p-3.5 rounded-2xl border border-[#22222a] mb-6 space-y-2">
-                                            {pkg.notes.map((note, idx) => (
-                                                <p key={idx} className="text-[11px] text-slate-400 leading-relaxed">
-                                                    <strong className="text-amber-400">Note :</strong> {note}
-                                                </p>
+                                {pkg.decor && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <SparklesIcon /> Fasilitas Dekorasi :
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.decor.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
                                             ))}
-                                        </div>
-                                    )}
-                                </div>
+                                        </ul>
+                                    </div>
+                                )}
 
-                                <button 
-                                    onClick={() => navigateTo('contact')} 
-                                    className="w-full py-3.5 rounded-full bg-amber-500 text-black hover:bg-amber-400 font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20"
-                                >
-                                    Pesan Paket Gedung Ini
-                                </button>
+                                {pkg.makeup && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <UserIcon /> Fasilitas Make up dan busana
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.makeup.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {pkg.documentation && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <CameraIcon /> Fasilitas Dokumentasi
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.documentation.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {pkg.entertainment && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <MusicIcon /> Fasilitas Hiburan
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.entertainment.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {pkg.mc && (
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <MicIcon /> Fasilitas MC
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.mc.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {pkg.mapag && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center">
+                                            <UsersIcon /> Fasilitas Mapag / Lengser
+                                        </h4>
+                                        <ul className="space-y-1.5 text-xs text-slate-300">
+                                            {pkg.mapag.map((item, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <span className="text-amber-400/80 mr-2 shrink-0">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {pkg.notes && (
+                                    <div className="bg-[#0a0a0c] p-3.5 rounded-2xl border border-[#22222a] mb-6 space-y-2">
+                                        {pkg.notes.map((note, idx) => (
+                                            <p key={idx} className="text-[11px] text-slate-400 leading-relaxed">
+                                                <strong className="text-amber-400">Note :</strong> {note}
+                                            </p>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
-                        ))}
-                    </div>
-                )}
+
+                            <button 
+                                onClick={() => navigateTo('contact')} 
+                                className={`w-full py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all ${
+                                    pkg.badgeText 
+                                        ? 'bg-amber-500 text-black hover:bg-amber-400 shadow-lg shadow-amber-500/20' 
+                                        : 'bg-[#1a1a22] border border-[#333340] text-slate-200 hover:bg-amber-500 hover:text-black'
+                                }`}
+                            >
+                                Pesan Paket Ini via WA
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </section>
 
             {/* --- SEKSI 2: PERLENGKAPAN SEWA SATUAN --- */}
