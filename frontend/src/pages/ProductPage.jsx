@@ -818,42 +818,6 @@ export default function ProductPage({ navigateTo }) {
                     </p>
                 </div>
 
-                {/* Tab Switcher: Filter Jenis Paket (Diperbaiki agar rapi & tidak patah di mobile) */}
-                <div className="flex justify-center mb-10 overflow-x-auto py-2 px-1">
-                    <div className="bg-[#121216] border border-[#22222a] p-1.5 rounded-full inline-flex flex-nowrap space-x-1 sm:space-x-2 shrink-0">
-                        <button
-                            onClick={() => setSelectedPackageTab('All')}
-                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
-                                selectedPackageTab === 'All'
-                                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
-                                    : 'text-slate-400 hover:text-white'
-                            }`}
-                        >
-                            Semua 11 Paket
-                        </button>
-                        <button
-                            onClick={() => setSelectedPackageTab('Rumah/Outdoor')}
-                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
-                                selectedPackageTab === 'Rumah/Outdoor'
-                                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
-                                    : 'text-slate-400 hover:text-white'
-                            }`}
-                        >
-                            <HomeIcon /> Rumah & Outdoor
-                        </button>
-                        <button
-                            onClick={() => setSelectedPackageTab('Gedung')}
-                            className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center justify-center ${
-                                selectedPackageTab === 'Gedung'
-                                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
-                                    : 'text-slate-400 hover:text-white'
-                            }`}
-                        >
-                            <BuildingIcon /> Gedung & Resto
-                        </button>
-                    </div>
-                </div>
-
                 {/* Grid Paket Rental */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredPackages.map((pkg) => (
