@@ -685,7 +685,7 @@ export default function ProductPage({ navigateTo }) {
                 'Harga paket ini hanya utk wilayah Serang dan sekitarnya. Utk wilayah di luar Kota Serang ( Cilegon, Pandeglang, Lebak, Labuan dll ) ada penambahan biaya transportasi sesuai lokasi / jarak tempuh'
             ]
         },
-        // Paket 9 dari list lu (Rp 30.000.000) - REKOMENDASI 2 (Paket 30jt Gedung)
+// Paket 9 dari list lu (Rp 30.000.000) - REKOMENDASI 2 (Paket 30jt Gedung)
         {
             id: 'p9',
             type: 'Gedung',
@@ -716,6 +716,39 @@ export default function ProductPage({ navigateTo }) {
                 'Papan acrylic ucapan selamat dtg + cutting sticker nama pengantin',
                 'Welcome gate / gapura bunga artificial',
                 'Standing welcome mirror selfie + cutting sticker nama pengantin'
+            ],
+            makeup: [
+                'Make up pengantin',
+                'Pakaian pengantin max 3x ganti',
+                'Fresh melati pengantin',
+                'Softlens',
+                'Make up orang tua + besan + pakaian 1x ganti',
+                'Make up keluarga/pagar ayu 4 + baju'
+            ],
+            documentation: [
+                'Foto 1 album',
+                'Videoshoot',
+                'Master foto + video dlm bentuk FD'
+            ],
+            entertainment: [
+                'Organ tunggal + pemain + singer 1 + soundsystem',
+                'Panggung hiburan 3x3 / 3x4'
+            ],
+            mc: [
+                'MC akad + upacara adat + resepsi',
+                'Free : party popper, kendi, telor'
+            ],
+            traditionalProcession: [
+                'Penari 3 orang',
+                'Pemayung 1 orang',
+                'Lengser dan ambu',
+                'Upacara penyambutan',
+                'Iring pengantin wanita',
+                'Tari persembahan',
+                'Kirab',
+                'Tiktok/flashmob',
+                'Wedding kiss',
+                'Lempar bunga'
             ],
             notes: [
                 'Apabila sketsel pelaminan diatas 10m ada penambahan biaya Rp. 1.500.000 / m sdh include penambahan biaya fresh flowers',
